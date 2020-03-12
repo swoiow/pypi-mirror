@@ -6,10 +6,15 @@
 ```
 docker run -it --rm --name pypi \
   -p 0.0.0.0:8080:80 \
-  -v $$(pwd)/cache:/cache \
+  -v $(pwd)/cache:/cache \
   -e MIRROR_URL=https://pypi.tuna.tsinghua.edu.cn/simple/ \
-  pypi-cache \
-  python -m devpi-server --include-mirrored-files --serverdir=/cache --proxy-timeout=10 --host=0.0.0.0 --port=80
+  pylab/pypi-cache \
+    devpi-server --include-mirrored-files \
+    --serverdir=/cache \
+    --proxy-timeout=10 \
+    --host=0.0.0.0 \
+    --port=80
+
 ```
 
 ---
