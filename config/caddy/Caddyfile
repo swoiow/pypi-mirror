@@ -1,0 +1,5 @@
+:80 {
+#	tls internal
+	reverse_proxy localhost:3141
+	file_server
+}

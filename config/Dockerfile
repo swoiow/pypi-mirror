@@ -19,4 +19,4 @@ EXPOSE 3141
 
 ENTRYPOINT ["dumb-init", "--"]
 
-CMD ["python", "entrypoint.py"]
+CMD ["/bin/sh", "entrypoint.sh"]

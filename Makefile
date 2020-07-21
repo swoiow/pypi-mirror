@@ -1,7 +1,7 @@
 export MIRROR_URL := https://pypi.tuna.tsinghua.edu.cn/simple/
 
 build:
-	docker build -t pypi-mirror -f alpine.Dockerfile .
+	docker build -t pypi-mirror -f config/alpine.Dockerfile .
 
 
 up:
