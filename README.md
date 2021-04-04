@@ -57,3 +57,22 @@ pylab/pypi-mirror
       proxy_pass http://127.0.0.1:3141/root/pypi/;
   }
   ```
+
+
+## Issue
+
+### SSL error
+  
+  - 方法一：
+  
+    使用 `--trusted-host` 参数
+    
+    ``` pip install --trusted-host domain.com package-name```
+    
+
+  - 方法二：
+    
+    1. 购买域名 
+    2. 使用[amce.sh](https://github.com/acmesh-official/acme.sh)生成证书 
+    3. 用cloudflare设置dns到本地的机器。
+  

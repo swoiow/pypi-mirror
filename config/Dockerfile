@@ -11,9 +11,10 @@ ARG MIRROR_URL=https://pypi.tuna.tsinghua.edu.cn/simple/
 ENV MIRROR_URL=${MIRROR_URL}
 ENV PIP_INDEX_URL=${MIRROR_URL}
 
-RUN pip install -q --no-cache-dir "devpi-server==${DEVPI_VAR}"
+RUN pip install -q --no-cache-dir -U "devpi-server==${DEVPI_VAR}" "pyramid<2"
 
-COPY entrypoint.py entrypoint.py
+COPY config config
+COPY entrypoint.sh entrypoint.sh
 
 EXPOSE 3141
 
